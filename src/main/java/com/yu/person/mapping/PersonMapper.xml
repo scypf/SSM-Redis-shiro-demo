@@ -5,4 +5,10 @@
     <select id="queryAll" resultType="Person" >  
         select * from person  
     </select>
+    
+     <!-- 查询一个person -->  
+    <select id="findPersonById" resultType="Person"  parameterType="int">  
+        select * from person  where 1 = 1 and id = #{id} limit 1
+    </select>
+    
 </mapper>

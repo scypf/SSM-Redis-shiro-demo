@@ -11,4 +11,10 @@ public interface IPersonService {
      * @return
      */
     List<Person> loadPersons();
+    
+    /**
+     * 查询单个person
+     * @return
+     */
+    Person findPersonById(String id);
 }

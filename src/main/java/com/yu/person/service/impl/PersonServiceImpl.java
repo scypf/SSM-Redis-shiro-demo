@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.yu.common.annotation.RedisCache;
 import com.yu.person.dao.PersonMapper;
 import com.yu.person.model.Person;
 import com.yu.person.service.IPersonService;
@@ -25,6 +26,12 @@ public class PersonServiceImpl implements IPersonService {
     @Override
     public List<Person> loadPersons() {
         return personMapper.queryAll();
+    }
+    
+    @Override
+    @RedisCache(type = Person.class, expire = 3600)  //单位：秒  
+    public Person findPersonById(String id) {
+        return personMapper.findPersonById(Integer.parseInt(id));
     }
     
 }

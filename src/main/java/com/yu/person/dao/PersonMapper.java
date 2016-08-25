@@ -16,4 +16,6 @@ public interface PersonMapper {
      * @return
      */
     List<Person> queryAll();
+    
+    Person findPersonById(int id);
 }
