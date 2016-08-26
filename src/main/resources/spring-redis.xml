@@ -39,7 +39,7 @@
     <bean id="jedisClient" class="com.yu.redis.impl.JedisClientSingle" />  
       
     <!-- jedis集群版配置 -->  
-<!--     <bean id="redisClient" class="redis.clients.jedis.JedisCluster">  
+	<!--     <bean id="redisClient" class="redis.clients.jedis.JedisCluster">  
         <constructor-arg name="nodes">  
             <set>  
                 <bean class="redis.clients.jedis.HostAndPort">  
