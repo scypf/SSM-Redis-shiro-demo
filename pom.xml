@@ -165,6 +165,40 @@
 		</dependency>
 		<!-- shiro end -->
 
+           <!-- 引入Dubbo依赖 -->
+	    <dependency>
+	            <groupId>com.alibaba</groupId>
+	            <artifactId>dubbo</artifactId>
+	            <version>2.5.3</version>
+	              <!-- 因为dubbo自带的spring2.5和上面的spring会有冲突，所以指定一下spring -->
+	              <exclusions>  
+				   <exclusion>  
+				    <artifactId>spring</artifactId>  
+				    <groupId>org.springframework</groupId>  
+				   </exclusion>  
+				  </exclusions> 
+	    </dependency>
+	    <!-- zookeeper依赖 -->
+	    <dependency>
+	            <groupId>org.apache.zookeeper</groupId>
+	            <artifactId>zookeeper</artifactId>
+	            <version>3.4.6</version>
+	    </dependency>
+	    <!-- zookeeper客户端 zkclient -->
+	    <dependency>
+	         <groupId>com.github.sgroschupf</groupId>
+	         <artifactId>zkclient</artifactId>
+	         <version>0.1</version>
+	    </dependency>
+    
+    	<!-- 添加Dubbo服务接口provider依赖 -->
+	    <dependency>
+	      <groupId>com.yu</groupId>
+	      <artifactId>dubbo.provider</artifactId>
+	      <version>0.0.1-SNAPSHOT</version>
+	    </dependency>
+	    
+	    
     </dependencies>
   <build>
     <finalName>ssm-redis-shiro</finalName>

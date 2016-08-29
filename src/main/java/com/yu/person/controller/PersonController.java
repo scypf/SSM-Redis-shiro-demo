@@ -11,6 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.yu.person.model.Person;
 import com.yu.person.service.IPersonService;
 
+import dubbo.provider.service.TestService;
+
+
+
 @Controller
 @RequestMapping("/personController")
 public class PersonController {
@@ -41,4 +45,24 @@ public class PersonController {
         return "showoneperson";
     }
 
+    //Dubbo消费端demo
+    @Autowired
+	private TestService testService;
+	
+	public TestService getTestService() {
+		return testService;
+	}
+
+	public void setTestService(TestService testService) {
+		this.testService = testService;
+	}
+
+	@RequestMapping("/dubboConsumer")
+	public String index(Model model){
+		System.out.println("消费者:开始尝试调用提供者服务:sayHello");
+	    testService.sayHello("pengfei");
+	    System.out.println("消费者:提供者的服务:sayHello调用完毕");
+		return "index";
+	}
+	
 }
