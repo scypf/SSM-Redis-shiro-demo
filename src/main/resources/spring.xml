@@ -22,6 +22,8 @@
     
     <import resource="spring-redis.xml"/>
     
+    <import resource="spring-shiro.xml"/>
+    
     <import resource="dubbo-consumer.xml"/>
     
 </beans>
